@@ -59,7 +59,7 @@ class Game():
         self._parent.show_all()
         self._path = path
 
-        self._colors = ['#FFFFFF']
+        self._colors = ["#D5D5D5"]
         self._colors.append(colors[0])
         self._colors.append(colors[1])
 
@@ -448,7 +448,8 @@ class Game():
         # Restrict Cairo to the exposed area
         alloc = win.get_allocation()
         cr.rectangle(0, 0, alloc.width, alloc.height)
-        cr.clip()
+        cr.set_source_rgb(1, 1, 1)
+        cr.fill()
         # Refresh sprite list
         self._sprites.redraw_sprites(cr=cr)
 
